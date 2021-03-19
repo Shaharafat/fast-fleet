@@ -19,13 +19,15 @@ export const useAuth = () => useContext(authContext);
 // AuthProvider will wrap whole app
 export const AuthProvider = ({children}) => {
   const [loading, setLoading] = useState(true);
-  const [currentUser, setCurrentUser] = useState(null);
-  const [userData, setUserData] = useState(null);
+  const [currentUser, setCurrentUser] = useState('');
+  const [userData, setUserData] = useState('');
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
       setLoading(false);
+      let name = localStorage.getItem(user?.email);
+      setUserData({ email: user.email, name });
       console.log(currentUser);
     });
 

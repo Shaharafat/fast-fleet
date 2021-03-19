@@ -39,6 +39,9 @@ const Form = ({ isSignupPage = false }) => {
       await doSignupWithEmailPass(email, password);
       // set user data to context
       setUserData({ name, email });
+      // set name to localStorage so that 
+      // you get it if you revisit to your site
+      localStorage.setItem(email, name);
       history.replace(from);
     } catch (error) {
       setError(error.message);
