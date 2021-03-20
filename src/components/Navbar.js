@@ -41,7 +41,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="md:mx-2">
-          <Link to="/destination/:id" className="navLinkStyles text-gray-800">
+          <Link to="/destination/1" className="navLinkStyles text-gray-800">
             Destination
           </Link>
         </li>

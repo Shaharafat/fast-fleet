@@ -4,6 +4,8 @@ import Service from './Service';
 import Button from './Button';
 import Form from './Form';
 import SocialLogin from './SocialLogin';
+import SearchTicket from './SearchTicket';
+import TicketBox from './TicketBox';
 
 export {
   Navbar,
@@ -11,5 +13,7 @@ export {
   Service,
   Button,
   Form,
-  SocialLogin
+  SocialLogin,
+  SearchTicket,
+  TicketBox
 }
