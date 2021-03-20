@@ -17,18 +17,21 @@ const { Provider } = authContext;
 export const useAuth = () => useContext(authContext);
 
 // AuthProvider will wrap whole app
-export const AuthProvider = ({children}) => {
+export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const [currentUser, setCurrentUser] = useState('');
-  const [userData, setUserData] = useState('');
+  const [currentUser, setCurrentUser] = useState("");
+  const [userData, setUserData] = useState("");
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
       setLoading(false);
-      let name = localStorage.getItem(user?.email);
-      setUserData({ email: user.email, name });
-      console.log(currentUser);
+      // if user is not null get data from local storage
+      if (user) {
+        let name = localStorage.getItem(user?.email);
+        setUserData({ email: user.email, name });
+        console.log(currentUser);
+      }
     });
 
     return unsubscribe;
@@ -59,6 +62,10 @@ export const AuthProvider = ({children}) => {
     return auth.sendPasswordResetEmail(email);
   };
 
+  // this will remove current user
+  let doRemoveUser = () => {
+    return currentUser.delete();
+  };
 
   const value = {
     currentUser,
@@ -70,10 +77,11 @@ export const AuthProvider = ({children}) => {
     doLogout,
     doSignupWithEmailPass,
     doSigninWithEmailPass,
-    doResetPassword
-  }
+    doResetPassword,
+    doRemoveUser,
+  };
 
   return (
-    <Provider value={value}>{ children }</Provider>
-  )
-}
+    <Provider value={value}>{loading ? <h1>loading</h1> : children}</Provider>
+  );
+};

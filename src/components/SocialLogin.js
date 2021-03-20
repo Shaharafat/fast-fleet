@@ -11,7 +11,6 @@ import {
   faFacebookF,
   faGithub,
   faGoogle,
-  faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { useHistory, useLocation } from "react-router-dom";
 import { Button } from "../components";

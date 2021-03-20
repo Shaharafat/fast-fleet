@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navSectionStyles bg-blue-500 md:bg-transparent text-white">
+    <nav className="navSectionStyles bg-blue-500 md:bg-transparent text-gray-800">
       <h1 className="text-xl font-bold">
         <Link to="/">Fast Fleet</Link>
       </h1>
@@ -36,29 +36,29 @@ const Navbar = () => {
         } bg-blue-500 md:bg-transparent text-gray-800 `}
       >
         <li className="md:mx-2">
-          <Link to="/" className="navLinkStyles text-white">
+          <Link to="/" className="navLinkStyles text-gray-800">
             Home
           </Link>
         </li>
         <li className="md:mx-2">
-          <Link to="/destination" className="navLinkStyles text-white">
+          <Link to="/destination/:id" className="navLinkStyles text-gray-800">
             Destination
           </Link>
         </li>
         <li className="md:mx-2">
-          <Link to="/blog" className="navLinkStyles text-white">
+          <Link to="/blog" className="navLinkStyles text-gray-800">
             Blog
           </Link>
         </li>
         <li className="md:mx-2">
-          <Link to="/contact" className="navLinkStyles text-white">
+          <Link to="/contact" className="navLinkStyles text-gray-800">
             Contact
           </Link>
         </li>
         {/* is user is logged in show user name otherwise show login button */}
         <li className="md:ml-2">
           {currentUser ? (
-            <Link to="/" className="navLinkStyles text-white">
+            <Link to="/profile" className="navLinkStyles text-gray-800">
               <Icon iconName={faUser} iconStyles='mr-2' />
               {currentUser.displayName || userData.name }
             </Link>

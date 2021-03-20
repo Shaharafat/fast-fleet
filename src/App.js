@@ -9,7 +9,7 @@
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
-import { About, Contact, Destination, ForgotPassword, Home, Login, Signup } from "./pages";
+import {Blog, Contact, Destination, ForgotPassword, Home, Login, Profile, Signup, NotFound } from "./pages";
 import PrivateRoute from "./routes/PrivateRoute";
 
 function App() {
@@ -19,11 +19,13 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/contact" component={Contact} />
-          <Route path="/about" component={About} />
-          <PrivateRoute path="/destination" component={Destination} />
-          <Route path="/login" component={Login} />
-          <Route path="/forgotPassword" component={ForgotPassword} />
+          <Route path="/blog" component={Blog} />
           <Route path="/signup" component={Signup} />
+          <Route path="/login" component={Login} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/forgotPassword" component={ForgotPassword} />
+          <PrivateRoute path="/destination/:id" component={Destination} />
+          <Route path="*" component={NotFound}/>
         </Switch>
       </Router>
     </AuthProvider>
