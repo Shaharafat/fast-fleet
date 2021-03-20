@@ -8,6 +8,7 @@
  */
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Loader } from "./components";
 import { AuthProvider } from "./context/AuthContext";
 import {Blog, Contact, Destination, ForgotPassword, Home, Login, Profile, Signup, NotFound } from "./pages";
 import PrivateRoute from "./routes/PrivateRoute";

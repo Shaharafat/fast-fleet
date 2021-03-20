@@ -8,6 +8,7 @@
  */
 
 import { createContext, useContext, useEffect, useState } from "react";
+import { Loader } from "../components";
 import { auth } from "../firebase";
 
 const authContext = createContext();
@@ -82,6 +83,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <Provider value={value}>{loading ? <h1>loading</h1> : children}</Provider>
+    <Provider value={value}>{loading ? <Loader /> : children}</Provider>
   );
 };

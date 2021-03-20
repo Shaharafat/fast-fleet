@@ -9,12 +9,12 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Form, SocialLogin } from "../components";
+import { Form, Layout, SocialLogin } from "../components";
 
 const Signup = () => {
 
   return (
-    <div className="h-screen flex justify-center items-center">
+    <Layout isContentCentered={true}>
       <div className="content-container">
         <p className="text-gray-600 font-semibold mt-4">Sign up for your account</p>
         <Form isSignupPage={true} />
@@ -24,7 +24,7 @@ const Signup = () => {
           <span>Already have an account? <Link to="/login" className="text-blue-500 hover:underline">Login</Link></span>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

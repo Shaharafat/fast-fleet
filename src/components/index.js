@@ -7,7 +7,8 @@ import SocialLogin from './SocialLogin';
 import SearchTicket from './SearchTicket';
 import TicketBox from './TicketBox';
 import Layout from './Layout';
-import GoogleMap from './GoogleMap'
+import GoogleMap from './GoogleMap';
+import Loader from './Loader';
 
 export {
   Navbar,
@@ -19,5 +20,6 @@ export {
   SearchTicket,
   TicketBox,
   Layout,
-  GoogleMap
+  GoogleMap,
+  Loader
 }

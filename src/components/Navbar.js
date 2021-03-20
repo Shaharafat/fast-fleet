@@ -63,7 +63,7 @@ const Navbar = () => {
               {currentUser.displayName || userData.name }
             </Link>
           ) : (
-            <Link to="/login" className="text-white">
+            <Link to="/login" className="navLinkStyles text-white">
               <button className="bg-red-500 text-md rounded-md px-4 py-1" >Login</button>
             </Link>
           )}

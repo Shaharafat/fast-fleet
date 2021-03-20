@@ -45,7 +45,7 @@ const Profile = () => {
         <img
           src={currentUser?.photoURL}
           alt="user"
-          className="rounded-full border-4 border-gray-800"
+          className="rounded-full border-4 w-32 border-gray-800"
         />
       )}
       <h2 className="text-gray-800 text-xl font-bold mt-3">
