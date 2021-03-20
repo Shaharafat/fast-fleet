@@ -10,6 +10,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Navbar, SearchTicket, TicketBox } from "../components";
+import mapImage from '../map.png';
 import allTickets from "../fakedata/tickets";
 
 const Destination = () => {
@@ -40,6 +41,9 @@ const Destination = () => {
           {
             showTickets && tickets.map(ticket => <TicketBox {...ticket} key={ticket.price} />)
           }
+        </div>
+        <div className="lg:col-span-2">
+          <img src={mapImage} alt="..."/>
         </div>
       </div>
     </div>
