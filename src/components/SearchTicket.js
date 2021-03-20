@@ -17,6 +17,8 @@ const SearchTicket = ({ search }) => {
     resolver: yupResolver(searchSchema),
   });
 
+  console.log(errors);
+
   return (
     <form onSubmit={handleSubmit(search)}>
       <div className="flex flex-col">
@@ -25,6 +27,7 @@ const SearchTicket = ({ search }) => {
           type="text"
           name="from"
           ref={register}
+          placeholder="Current location"
           className="mt-2 bg-blue-200 p-2"
         />
         <p className="text-sm text-red-600 mt-2">{errors?.from?.message}</p>
@@ -35,9 +38,21 @@ const SearchTicket = ({ search }) => {
           type="text"
           name="to"
           ref={register}
+          placeholder="Destination"
           className="mt-2 bg-blue-200 p-2"
         />
         <p className="text-sm text-red-600 mt-2">{errors?.to?.message}</p>
+      </div>
+      <div className="flex flex-col">
+        <label htmlFor="to">Departure Date</label>
+        <input
+          type="date"
+          name="date"
+          ref={register}
+          placeholder="Destination"
+          className="mt-2 bg-blue-200 p-2"
+        />
+        <p className="text-sm text-red-600 mt-2">{errors?.date?.message}</p>
       </div>
       <button
         type="submit"

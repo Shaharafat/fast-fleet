@@ -1,10 +1,11 @@
 import React from 'react'
+import { Layout } from '../components'
 
 const Contact = () => {
   return (
-    <div>
+    <Layout isContentCentered={true}>
       Contact
-    </div>
+    </Layout>
   )
 }
 

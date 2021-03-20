@@ -6,6 +6,8 @@ import Form from './Form';
 import SocialLogin from './SocialLogin';
 import SearchTicket from './SearchTicket';
 import TicketBox from './TicketBox';
+import Layout from './Layout';
+import GoogleMap from './GoogleMap'
 
 export {
   Navbar,
@@ -15,5 +17,7 @@ export {
   Form,
   SocialLogin,
   SearchTicket,
-  TicketBox
+  TicketBox,
+  Layout,
+  GoogleMap
 }

@@ -6,16 +6,17 @@
  * Date: 20-03-2021
  *
  */
-import React, { useState } from "react";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import * as yup from "yup";
+import { Layout } from "../components";
 import { useAuth } from "../context/AuthContext";
 
 const ForgotPassword = () => {
-  const [success,setSuccess] = useState("");
-  const [error,setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
   const { doResetPassword } = useAuth();
   const { register, handleSubmit, errors } = useForm({
     mode: "onTouched",
@@ -27,20 +28,19 @@ const ForgotPassword = () => {
   const resetPassword = async (data) => {
     let { email } = data;
     try {
-      setSuccess("")
-      setError("")
+      setSuccess("");
+      setError("");
       await doResetPassword(email);
       setSuccess("Password reset mail sent. Check email to reset");
     } catch (error) {
       // setError('No user found with this email')
-      setError(error.message)
+      setError(error.message);
       console.log("Password reset operation failed.", error.message);
     }
   };
 
   return (
-    <div className="h-screen flex justify-center items-center">
-      <div className="content-container">
+    <Layout isContentCentered={true}>
         <p className="text-gray-600 font-semibold mt-4">Reset password</p>
 
         <form
@@ -60,8 +60,8 @@ const ForgotPassword = () => {
             <p className="text-sm text-red-600">{errors.email?.message}</p>
           </div>
 
-          {success && <p className="text-sm text-green-600 mt-2">{success}</p> }
-          {error && <p className="text-sm text-red-600 mt-2">{error}</p> }
+          {success && <p className="text-sm text-green-600 mt-2">{success}</p>}
+          {error && <p className="text-sm text-red-600 mt-2">{error}</p>}
 
           <button
             type="submit"
@@ -79,8 +79,7 @@ const ForgotPassword = () => {
             </Link>
           </span>
         </div>
-      </div>
-    </div>
+    </Layout>
   );
 };
 

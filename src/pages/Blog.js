@@ -1,10 +1,11 @@
 import React from 'react'
+import { Layout } from '../components';
 
 const Blog = () => {
   return (
-    <div>
+    <Layout isContentCentered={true}>
      Blog 
-    </div>
+    </Layout>
   )
 }
 

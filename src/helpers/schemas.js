@@ -29,5 +29,6 @@ export const loginSchema = yup.object().shape({
 
 export const searchSchema = yup.object().shape({
   from: yup.string().min(3).required(),
-  to: yup.string().min(3).required()
+  to: yup.string().min(3).required(),
+  date: yup.date().min(new Date(), "Date must be forward from now").required()
 })
